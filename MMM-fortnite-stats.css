@@ -1,0 +1,148 @@
+.MMM-Fortnite {
+    font-family: "Roboto Condensed", Arial, sans-serif;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.4;
+    padding: 10px;
+}
+
+.MMM-Fortnite table {
+    width: 100%;
+    margin-bottom: 15px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.MMM-Fortnite .header-row {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 0;
+    margin-top: -1px;
+}
+
+.MMM-Fortnite .header-row td {
+    padding: 12px 15px;
+    text-align: center;
+    border-top: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.MMM-Fortnite .stats-row {
+    transition: background-color 0.3s ease;
+}
+
+.MMM-Fortnite .stats-row:nth-child(even) {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.MMM-Fortnite .stats-row td {
+    padding: 10px 15px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1em;
+}
+
+.MMM-Fortnite .stats-row td:first-child {
+    font-weight: bold;
+    color: #f39c12;
+    text-align: left;
+}
+
+.MMM-Fortnite .last-modified-table {
+    background: rgba(0, 0, 0, 0.3);
+    font-size: 11px;
+    opacity: 0.8;
+}
+
+.MMM-Fortnite .last-modified-table td {
+    padding: 6px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: left;
+}
+
+.MMM-Fortnite .last-modified-table td:first-child {
+    font-weight: bold;
+    color: #bdc3c7;
+    width: 140px;
+}
+
+.MMM-Fortnite .last-modified-table td:last-child {
+    color: #ecf0f1;
+}
+
+.MMM-Fortnite.horizontal .game-mode-section {
+    margin-bottom: 20px;
+}
+
+.MMM-Fortnite.vertical .game-mode-section {
+    display: block;
+    margin-bottom: 10px;
+    margin-right: 0;
+    width: 100%;
+}
+
+.MMM-Fortnite.vertical .game-mode-section h3 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.game-mode-section h3 {
+    text-align: center;
+    margin: 0;
+    padding: 8px;
+    font-size: 0.9em;
+    /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+    border-radius: 8px 8px 0 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: none;
+}
+
+td {
+    padding: 4px 8px;
+    text-align: center;
+}
+
+.horizontal-stats-table,
+.vertical-stats-table {
+    border-radius: 0 0 8px 8px;
+}
+
+.horizontal-stats-table {
+    width: 100%;
+}
+
+.vertical-stats-table {
+    width: 100%;
+    font-size: 1.2em;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 0 0 8px 8px;
+}
+
+.vertical-stats-table td {
+    padding: 4px 8px;
+}
+
+.vertical-stats-table td.stat-label {
+    text-align: left;
+    padding-left: 5px;
+    width: 50%;
+}
+
+.vertical-stats-table td.stat-value {
+    text-align: right;
+    padding-right: 5px;
+    width: 50%;
+}
+
+.last-modified {
+    font-size: 0.8em;
+    margin-top: 2px;
+    margin-bottom: 8px;
+    text-align: center;
+    opacity: 0.7;
+}

@@ -1,8 +1,8 @@
 {
-  "name": "mmm-template",
+  "name": "MMM-fortnite-stats",
   "version": "1.0.0",
-  "description": "[Module description]",
-  "main": "MMM-Template.js",
+  "description": "MagicMirror module to display your fortnite stats",
+  "main": "MMM-fortnite-stats.js",
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -10,21 +10,28 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+[GitHub url].git"
+    "url": "https://github.com/sebastian-ch/MMM-fortnite-stats.git"
   },
   "keywords": [
-    "template"
+    "MagicMirror",
+    "Module",
+    "Video Games",
+    "Fortnite"
   ],
   "author": "[Author]",
   "license": "MIT",
   "bugs": {
-    "url": "[GitHub url]/issues"
+    "url": "https://github.com/sebastian-ch/MMM-fortnite-stats/issues"
   },
-  "homepage": "[GitHub url]#readme",
+  "homepage": "https://github.com/sebastian-ch/MMM-fortnite-stats#readme",
   "devDependencies": {
     "@eslint/js": "^9.10.0",
     "@stylistic/eslint-plugin": "^2.7.2",
     "eslint": "^9.10.0",
     "globals": "^15.9.0"
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "dotenv": "^16.5.0"
   }
 }

@@ -1,29 +1,26 @@
-# MMM-Template
-Use this template for creating new MagicMirror² modules.
+# MMM-fortnite-stats
+This MagicMirror module adds your fornite stats to your mirror! It uses https://fortniteapi.io/ for the data and you can get a free API Key.
 
-See the [wiki page](https://github.com/Dennis-Rosenbaum/MMM-Template/wiki) for an in depth overview of how to get started.
+<img src="./horizontal.png" width="400">
 
-# MMM-Template
+<img src="./vertical.png" width="400">
 
-![Example of MMM-Template](./example_1.png)
 
-[Module description]
+## Install
 
-## Installation
-
-### Install
-
-In your terminal, go to your [MagicMirror²][mm] Module folder and clone MMM-Template:
+In your terminal, go to your [MagicMirror²][mm] Module folder and clone MMM-fortnite-stats:
 
 ```bash
 cd ~/MagicMirror/modules
-git clone [GitHub url]
+git clone https://github.com/sebastian-ch/MMM-fortnite-stats.git
+cd ~/MMM-fortnite-stats
+npm install
 ```
 
-### Update
+## Update
 
 ```bash
-cd ~/MagicMirror/modules/MMM-Template
+cd ~/MagicMirror/modules/MMM-fortnite-stats
 git pull
 ```
 
@@ -33,34 +30,37 @@ To use this module, add it to the modules array in the `config/config.js` file:
 
 ```js
     {
-        module: 'MMM-Template',
-        position: 'lower_third'
-    },
-```
+		module: 'MMM-fortnite-stats',
+		position: 'top_right',
+		config: {
+			username: 'Ninja',
+			apiKey: 'api-key-here',
+			updateInterval: 1800000,
+			showSolo: true,
+			showDuo: true,
+			displayDirection: 'horizontal' // or vertical
+		},
 
-Or you could use all the options:
-
-```js
-    {
-        module: 'MMM-Template',
-        position: 'lower_third',
-        config: {
-            exampleContent: 'Welcome world'
-        }
-    },
+	},
 ```
 
 ## Configuration options
 
 Option|Possible values|Default|Description
 ------|------|------|-----------
-`exampleContent`|`string`|not available|The content to show on the page
+`username`|`string`|Ninja|your epic account username
+`apiKey`|`string`||your api key from https://fortniteapi.io/
+`showSolo`|`boolean`|true |show your Solo stats
+`showDuo`|`boolean`|true| show your Duo stats
+`updateInterval`| `number` | 1800000 | default is 30 minutes, the data from the api updates sporadically
 
-## Sending notifications to the module
 
-Notification|Description
-------|-----------
-`TEMPLATE_RANDOM_TEXT`|Payload must contain the text that needs to be shown on this module
+## Comments
+- horizontal and vertical displays work well on my large mirror, if there are issues on smaller mirrors let me know!
+- I've only really tested in the left and right placements - not at the top or bottom
+- Please let me know if there are other stats you'd like to see. Also see the documentation at the API (https://fortniteapi.io/) to see what is available.
+
+
 
 ## Developer commands
 
