@@ -59,6 +59,7 @@ Option|Possible values|Default|Description
 - horizontal and vertical displays work well on my large mirror, if there are issues on smaller mirrors let me know!
 - I've only really tested in the left and right placements - not at the top or bottom
 - Please let me know if there are other stats you'd like to see. Also see the documentation at the API (https://fortniteapi.io/) to see what is available.
+- feel free to make a pull request for changes!
 
 
 
