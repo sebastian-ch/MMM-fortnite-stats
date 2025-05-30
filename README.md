@@ -1,7 +1,11 @@
 # MMM-fortnite-stats
 This MagicMirror module adds your fornite stats to your mirror! It uses https://fortniteapi.io/ for the data and you can get a free API Key.
 
+horizontal example:
+
 <img src="./horizontal.png" width="400">
+
+vertical example:
 
 <img src="./vertical.png" width="400">
 
