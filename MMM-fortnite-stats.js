@@ -11,6 +11,8 @@ Module.register("MMM-fortnite-stats", {
 
   start: function () {
     this.stats = null;
+    this.previousStats = null;  // Add previous stats storage
+    this.error = null;
     this.getStats();
     setInterval(() => {
       this.getStats();
@@ -26,15 +28,59 @@ Module.register("MMM-fortnite-stats", {
 
   socketNotificationReceived: function (notification, payload) {
     if (notification === "PLAYER_STATS_RESULT") {
-      this.stats = payload;
+      this.error = null;
+      this.stats = payload.current;
+      this.previousStats = payload.previous;
+      this.updateDom();
+    } else if (notification === "PLAYER_STATS_ERROR") {
+      this.error = payload;
       this.updateDom();
     }
+  },
+
+  createStatDiff: function (current, previous, statKey) {
+    if (!previous) return '';
+
+    const currentValue = current[statKey] || 0;
+    const previousValue = previous[statKey] || 0;
+    const diff = currentValue - previousValue;
+
+    if (diff === 0) return `<span class="stat-diff gray">&nbsp;0</span>`;
+
+    const arrow = diff > 0 ? '▲' : '▼';
+    const color = diff > 0 ? 'green' : 'red';
+    const sign = diff > 0 ? '+' : '';
+    const displayValue = statKey === 'kd' ? Math.abs(diff).toFixed(2) : Math.abs(diff);
+    return `<div class="stat-diff ${color}">&nbsp;${arrow}${sign}${displayValue}</div>`;
+  },
+
+  createStatsRow: function (stats, mode) {
+    const row = document.createElement("tr");
+    row.className = "stats-row";
+
+    const previousStats = this.previousStats?.global_stats?.[mode];
+    const statsConfig = [
+      { key: 'matchesplayed' },
+      { key: 'placetop1' },
+      { key: mode === 'solo' ? 'placetop10' : 'placetop12' },
+      { key: 'kills' },
+      { key: 'kd' }
+    ];
+
+    row.innerHTML = statsConfig.map(stat => {
+      const currentValue = stats[stat.key] || 0;
+      const diff = this.createStatDiff(stats, previousStats, stat.key);
+      return `<td>${currentValue}${diff}</td>`;
+    }).join('');
+
+    return row;
   },
 
   createVerticalTable: function (stats, mode) {
     const table = document.createElement("table");
     table.className = "vertical-stats-table";
 
+    const previousStats = this.previousStats?.global_stats?.[mode];
     const statsConfig = [
       { label: "Matches", key: "matchesplayed" },
       { label: "Wins", key: "placetop1" },
@@ -45,9 +91,12 @@ Module.register("MMM-fortnite-stats", {
 
     statsConfig.forEach(stat => {
       const row = document.createElement("tr");
+      const currentValue = stats[stat.key] || 0;
+      const diff = this.createStatDiff(stats, previousStats, stat.key);
       row.innerHTML = `
         <td class="stat-label">${stat.label}</td>
-        <td class="stat-value">${stats[stat.key] || 0}</td>
+        <td class="stat-value">${currentValue}</td>
+        <td class="stat-diff-cell">${diff}</td>
       `;
       table.appendChild(row);
     });
@@ -59,6 +108,7 @@ Module.register("MMM-fortnite-stats", {
     const table = document.createElement("table");
     table.className = "horizontal-stats-table";
 
+    // Header row stays the same
     const headerRow = document.createElement("tr");
     headerRow.className = "header-row";
     headerRow.innerHTML = `
@@ -70,17 +120,8 @@ Module.register("MMM-fortnite-stats", {
     `;
     table.appendChild(headerRow);
 
-    // Stats row
-    const statsRow = document.createElement("tr");
-    statsRow.className = "stats-row";
-    statsRow.innerHTML = `
-      <td>${stats.matchesplayed || 0}</td>
-      <td>${stats.placetop1 || 0}</td>
-      <td>${mode === "solo" ? stats.placetop10 || 0 : stats.placetop12 || 0}</td>
-      <td>${stats.kills || 0}</td>
-      <td>${stats.kd || 0}</td>
-    `;
-    table.appendChild(statsRow);
+    // Stats row without differences
+    table.appendChild(this.createStatsRow(stats, mode));
 
     return table;
   },

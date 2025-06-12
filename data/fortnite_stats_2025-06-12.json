@@ -1,0 +1,152 @@
+{
+  "result": true,
+  "name": "appa014",
+  "account": {
+    "season": 36,
+    "level": 19,
+    "process_pct": 89
+  },
+  "accountLevelHistory": [
+    {
+      "season": 27,
+      "level": 23,
+      "process_pct": 8
+    },
+    {
+      "season": 28,
+      "level": 8,
+      "process_pct": 44
+    },
+    {
+      "season": 33,
+      "level": 214,
+      "process_pct": 39
+    },
+    {
+      "season": 34,
+      "level": 161,
+      "process_pct": 93
+    },
+    {
+      "season": 35,
+      "level": 76,
+      "process_pct": 54
+    },
+    {
+      "season": 36,
+      "level": 19,
+      "process_pct": 89
+    }
+  ],
+  "global_stats": {
+    "solo": {
+      "placetop1": 7,
+      "kd": 2.72,
+      "winrate": 0.02,
+      "placetop3": 0,
+      "placetop5": 0,
+      "placetop6": 0,
+      "placetop10": 104,
+      "placetop12": 0,
+      "placetop25": 159,
+      "kills": 775,
+      "matchesplayed": 292,
+      "minutesplayed": 3223,
+      "score": 83085,
+      "playersoutlived": 18976,
+      "lastmodified": 1749676786
+    },
+    "duo": {
+      "placetop1": 17,
+      "kd": 2.19,
+      "winrate": 0.02,
+      "placetop3": 0,
+      "placetop5": 129,
+      "placetop6": 0,
+      "placetop10": 0,
+      "placetop12": 282,
+      "placetop25": 0,
+      "kills": 1797,
+      "matchesplayed": 836,
+      "minutesplayed": 8112,
+      "score": 197826,
+      "playersoutlived": 48949,
+      "lastmodified": 1749745124
+    },
+    "squad": {
+      "placetop1": 0,
+      "kd": 0,
+      "winrate": 0,
+      "placetop3": 0,
+      "placetop5": 0,
+      "placetop6": 0,
+      "placetop10": 0,
+      "placetop12": 0,
+      "placetop25": 0,
+      "kills": 0,
+      "matchesplayed": 2,
+      "minutesplayed": 0,
+      "score": 0,
+      "playersoutlived": 0,
+      "lastmodified": 0
+    }
+  },
+  "per_input": {
+    "gamepad": {
+      "solo": {
+        "placetop1": 7,
+        "kd": 2.72,
+        "winrate": 0.02,
+        "placetop3": 0,
+        "placetop5": 0,
+        "placetop6": 0,
+        "placetop10": 104,
+        "placetop12": 0,
+        "placetop25": 159,
+        "kills": 775,
+        "matchesplayed": 292,
+        "minutesplayed": 3223,
+        "score": 83085,
+        "playersoutlived": 18976,
+        "lastmodified": 1749676786
+      },
+      "duo": {
+        "placetop1": 17,
+        "kd": 2.19,
+        "winrate": 0.02,
+        "placetop3": 0,
+        "placetop5": 129,
+        "placetop6": 0,
+        "placetop10": 0,
+        "placetop12": 282,
+        "placetop25": 0,
+        "kills": 1797,
+        "matchesplayed": 836,
+        "minutesplayed": 8112,
+        "score": 197826,
+        "playersoutlived": 48949,
+        "lastmodified": 1749745124
+      },
+      "squad": {
+        "placetop1": 0,
+        "kd": 0,
+        "winrate": 0,
+        "placetop3": 0,
+        "placetop5": 0,
+        "placetop6": 0,
+        "placetop10": 0,
+        "placetop12": 0,
+        "placetop25": 0,
+        "kills": 0,
+        "matchesplayed": 2,
+        "minutesplayed": 0,
+        "score": 0,
+        "playersoutlived": 0,
+        "lastmodified": 0
+      }
+    }
+  },
+  "seasons_available": [
+    36
+  ]
+}

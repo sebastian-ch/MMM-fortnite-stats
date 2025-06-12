@@ -13,6 +13,7 @@
     border-radius: 0;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-collapse: collapse;
 }
 
 .MMM-Fortnite .header-row {
@@ -25,7 +26,7 @@
 }
 
 .MMM-Fortnite .header-row td {
-    padding: 12px 15px;
+    padding: 10px 15px;
     text-align: center;
     border-top: none;
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
@@ -94,7 +95,6 @@
     margin: 0;
     padding: 8px;
     font-size: 0.9em;
-    /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
     border-radius: 8px 8px 0 0;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -109,18 +109,28 @@ td {
 .horizontal-stats-table,
 .vertical-stats-table {
     border-radius: 0 0 8px 8px;
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.horizontal-stats-table {
-    width: 100%;
+.horizontal-stats-table td {
+    text-align: center;
+    padding: 5px;
+    position: relative;
+    white-space: nowrap;
 }
+
+.horizontal-stats-table td:last-child {
+    text-align: right;
+    padding-right: 15px;
+}
+
+
 
 .vertical-stats-table {
-    width: 100%;
     font-size: 1.2em;
     margin: 0;
     background: rgba(0, 0, 0, 0.4);
-    border-radius: 0 0 8px 8px;
 }
 
 .vertical-stats-table td {
@@ -135,8 +145,34 @@ td {
 
 .vertical-stats-table td.stat-value {
     text-align: right;
-    padding-right: 5px;
-    width: 50%;
+    padding-right: 15px;
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.stat-diff {
+    font-size: 0.8em;
+    margin-left: 5px;
+    font-weight: bold;
+    white-space: nowrap;
+    text-align: right;
+
+}
+
+.stat-diff.green {
+    color: #4CAF50;
+    text-shadow: 0 0 8px currentColor;
+}
+
+.stat-diff.red {
+    color: #f44336;
+    text-shadow: 0 0 8px currentColor;
+}
+
+.stat-diff.gray {
+    color: #888888;
 }
 
 .last-modified {
@@ -145,4 +181,11 @@ td {
     margin-bottom: 8px;
     text-align: center;
     opacity: 0.7;
+}
+
+.MMM-Fortnite .error-message {
+    color: #ff4444;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
 }
